@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css'/>
+
+  </head>
+  <body>
+    <h1 style="border-bottom: 1px solid lightgray;padding-bottom: 0.5rem;"><%= title %></h1>
+    <div id="app-loading" style="display: none;"></div>
+    <div class="display-flex">
+      <div class="box display-box">
+          <div class="box-header">
+            XML Input
+          </div>
+          <div class="box-content" id="txtContent" style="white-space: pre;">
+          </div>
+      </div>
+      <div class="box center-box" style="overflow:unset">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile" accept="text/xml" onchange="openFile(event)">
+          <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <div>
+          <label>Node</label>
+          <input type="text" class="form-control" id="txtDescendants">
+        </div>
+        <div>
+          <label for="email">Descendant</label>
+          <input type="text" class="form-control" id="txtKeyword">
+        </div>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="chkWrapText">
+            <label class="custom-control-label" for="chkWrapText">Word Wrap</label>
+          </div>
+        <div class="max-width">
+            <button id="btnSearch" style="margin-top: .5rem;" class="form-control btn btn-primary" onclick="search()">Search</button>
+        </div>
+      </div>
+      <div class="box display-box">
+        <div class="box-header">
+          Result
+        </div>
+        <div class="box-content" id="boxResult"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
+
+<script src="/javascripts/jquery3-4-1.min.js"></script>
+<script src="/javascripts/site.js"></script>
