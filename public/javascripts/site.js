@@ -42,19 +42,19 @@ var search = function(){
         if(txtKeyword){
             let nodes = descendants[i].getElementsByTagName(txtKeyword);
             for(j = 0; j < nodes.length; j++){
-                nodeVal += nodes[j].innerHTML + '<br>';
+                nodeVal += nodes[j].innerHTML;
             }
         }
         else
         {
-            nodeVal = descendants[i].innerHTML + '<br>';
+            nodeVal = descendants[i].innerHTML;
         }
         if(!nodeVal)
             nodeVal = descendants[i].getAttribute(txtKeyword);
+            
         if(nodeVal)
         {
-            // nodeVal = nodeVal.replace(/(?:\r\n|\r|\n)/g, '<br>');
-            $('#boxResult').append(nodeVal);
+            $('#boxResult').append(nodeVal + '<br>');
         }
     }
 
