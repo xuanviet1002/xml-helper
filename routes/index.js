@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 var countUsers = function(){
-  var logFile = "logs/log";
+  var logFile = "userlogs/log";
 
   var userIndex = fs.readFileSync(logFile, 'utf8');
 
